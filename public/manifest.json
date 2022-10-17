@@ -1,7 +1,7 @@
 {
-  "version": "1.1",
-  "short_name": "Smart People Moving",
-  "name": "Smart People Moving",
+  "version": "2.0",
+  "short_name": "Grocery",
+  "name": "Grocery",
   "icons": [
     {
       "src": "/images/logo.png",
@@ -26,7 +26,5 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "orientation": "portrait",
-  "theme_color": "#40a9ff",
-  "background_color": "#f0f2f5"
+  "orientation": "portrait"
 }
