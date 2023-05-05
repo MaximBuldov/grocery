@@ -11,6 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+* {
+  box-sizing: border-box;
+}
 .container {
   background: #eee;
   width: 100%;
@@ -25,11 +29,35 @@ code {
   left: 0;
   background: #1890ff;
   padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
 }
+.bottom-menu::before, .bottom-menu::after, .bottom-menu li .ant-menu-title-content {
+  display: none;
+}
+
+.bottom-menu li span {
+  color: #fff !important;
+}
+
+.bottom-menu li {
+  width: 25%;
+  text-align: center;
+}
+
 .rc-virtual-list-scrollbar.rc-virtual-list-scrollbar-show {
   width: 15px !important;
 }
 
 .tabs {
   min-height: 100vh;
+}
+
+.select-department {
+  width: 100%;
+  -webkit-appearance: none;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  padding: 4px 11px;
+  margin-top: 20px;
 }
