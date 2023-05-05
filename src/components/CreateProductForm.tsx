@@ -54,7 +54,7 @@ const CreateProductForm = ({onCancel}: CreateProductFormProps) => {
 				<Input />
 			</Item>
 			<Item label="Shops" name={['fields', 'shop']} rules={[{required: true}]}>
-				<Select mode="multiple" options={shops.map(el => ({ label: el, value: el }) )}/>
+				<Select mode="multiple" showSearch={false} options={shops.map(el => ({ label: el, value: el }) )}/>
 			</Item>
 			<Item label="Department" name={['fields', 'department']} rules={[{required: true}]}>
 				<Select options={departments}/>

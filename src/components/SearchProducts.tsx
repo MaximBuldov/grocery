@@ -121,7 +121,10 @@ const SearchProducts = () => {
 				onSearch={setTitle}
 				onChange={(event) => setTitle(event.target.value)} 
 			/>
-			<select className="select-department" onChange={(event) => setCategory(event.target.value)}>
+			<select 
+				className="select-department"
+				onChange={(event) => setCategory(event.target.value === 'Filter by department' ? null : event.target.value)
+			}>
 				<option key="choose">Filter by department</option>
 				{departments.map(el => (
 					<option key={el.value} value={el.value}>{el.text}</option>

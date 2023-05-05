@@ -1,23 +1,23 @@
 import React, {  } from 'react';
-import { Spin } from "antd";
 import Products from "./components/Products";
 import SearchProducts from "./components/SearchProducts";
 import BottomMenu from "./components/BottomMenu";
 import { authorization } from "./services";
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
+import imgUrl from './images/logo.png';
 
 const App = () => {
     const token = localStorage.getItem('token')
-    const auth = useQuery({
+    useQuery({
         queryKey: ['auth'],
         queryFn: authorization,
         enabled: !token
     });
 
     return (
-        <Spin tip="Loading..." spinning={auth.isFetching}>
-            {token && (
+        <>
+            {token ? (
                 <div className="container">
                     <Routes>
                         <Route path="/" key="home" element={<Products />} />
@@ -26,8 +26,10 @@ const App = () => {
                     </Routes>
                     <BottomMenu />
                 </div>
+            ) : (
+                <img src={imgUrl} className="loading-logo" alt="logo" />
             )}
-        </Spin>
+        </>
     );
 }
 
